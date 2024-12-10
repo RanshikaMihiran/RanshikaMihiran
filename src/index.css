@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root{
+  font-family: "Inter", sans-serif;
+}
+
+/* Project section css */
+
+/* General Styles */
+body {
+  background-color: #121212; /* Dark background */
+  color: #e0e0e0; /* Light text for readability */
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* Projects Section */
+.projects {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.projects-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #ffffff; /* White title color */
+  margin-bottom: 30px;
+}
+
+/* Projects Container */
+.projects-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+/* Project Card */
+.project-card {
+  background-color: #1e1e1e; /* Slightly lighter black for cards */
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+}
+
+/* Project Image */
+.project-image {
+  width: 100%; /* Ensures the image stretches to the container width */
+  max-width: 100%; /* Prevents the image from exceeding the container width */
+  height: auto; /* Maintains the aspect ratio */
+  border-radius: 8px; /* Adds rounded corners */
+  margin-bottom: 15px; /* Adds spacing below the image */
+  display: block; /* Prevents inline space issues */
+  object-fit: cover; /* Ensures proper scaling of the image */
+}
+
+
+/* Project Title */
+.project-title {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #ffffff; /* White for title */
+  margin-bottom: 10px;
+}
+
+/* Project Description */
+.project-description {
+  font-size: 1rem;
+  color: #b0b0b0; /* Light gray for descriptions */
+  margin-bottom: 15px;
+}
+
+/* Project Technologies */
+.project-technologies {
+  font-size: 0.9rem;
+  color: #4fc3f7; /* Light blue for technologies */
+  margin-bottom: 15px;
+}
+
+/* Project Link */
+.project-link {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 1rem;
+  color: #ffffff; /* White text for button */
+  background-color: #4fc3f7; /* Light blue background */
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+.project-link:hover {
+  background-color: #0288d1; /* Darker blue on hover */
+}
+
+
+
+/* Project section css End */
