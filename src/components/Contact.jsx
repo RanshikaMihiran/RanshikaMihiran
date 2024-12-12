@@ -17,21 +17,21 @@ const ContactMe = () => {
               <FaPhoneAlt className="text-green-500 text-2xl" />
               <div>
                 <h4 className="font-semibold text-xl">Phone</h4>
-                <p className="text-gray-400">+94 77 123 4567</p>
+                <p className="text-gray-400">+94 76 179 4129</p>
               </div>
             </div>
             <div className="flex items-center gap-4">
               <FaEnvelope className="text-blue-500 text-2xl" />
               <div>
                 <h4 className="font-semibold text-xl">Email</h4>
-                <p className="text-gray-400">ranshika@example.com</p>
+                <p className="text-gray-400">ranshika20@gmail.com</p>
               </div>
             </div>
             <div className="flex items-center gap-4">
               <FaMapMarkerAlt className="text-red-500 text-2xl" />
               <div>
                 <h4 className="font-semibold text-xl">Location</h4>
-                <p className="text-gray-400">Colombo, Sri Lanka</p>
+                <p className="text-gray-400">471/1,Alawwa,Sri Lanka</p>
               </div>
             </div>
           </div>

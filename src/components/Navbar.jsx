@@ -26,11 +26,40 @@ const Navbar = () => {
 
         {/* Social Media Icons */}
         <div className="m-8 flex items-center justify-center gap-4 text-2xl">
-          <FaLinkedin />
-          <FaGithub />
-          <FaSquareTwitter />
-          <FaInstagram />
+          <a
+            href="https://www.linkedin.com/in/ranshika-mihiran-682450193/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-blue-500 transition-colors"
+          >
+            <FaLinkedin />
+          </a>
+          <a
+            href="https://github.com/RanshikaMihiran"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-gray-500 transition-colors"
+          >
+            <FaGithub />
+          </a>
+          <a
+            href="https://x.com/Ranshika2000"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-blue-400 transition-colors"
+          >
+            <FaSquareTwitter />
+          </a>
+          <a
+            href="https://www.instagram.com/abeykoon_rm/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-pink-500 transition-colors"
+          >
+            <FaInstagram />
+          </a>
         </div>
+
 
         {/* Hamburger Menu (Visible on small screens) */}
         <div className="md:hidden flex items-center">

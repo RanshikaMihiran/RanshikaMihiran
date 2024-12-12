@@ -48,7 +48,7 @@ const Projects = () => {
       title: 'Kocofay',
       description: 'I created a website for Kocofay Salon, featuring services and a user-friendly booking system for appointment scheduling. The design ensures a seamless experience for clients to explore services and make bookings online.',
       technologies: ['HTML', 'CSS', 'JavaScript', 'WordPress', 'Booking Plugins', 'Service Management Plugins'],
-      link: 'https://kocofay.com/',
+      link: 'https://github.com/RanshikaMihiran/ITPM',
     },
     {
       id: 1,

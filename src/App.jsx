@@ -1,6 +1,8 @@
 import About from "./components/About";
 import ContactMe from "./components/Contact";
+import CoursesAndCertifications from "./components/CoursesAndCertifications";
 import CVSection from "./components/Cv";
+import Education from "./components/Education";
 import Experience from "./components/Experience";
 import Hero from "./components/Hero";
 import Navbar from "./components/Navbar";
@@ -23,6 +25,8 @@ const App = () => {
         <MyProjects/>
         <Technologies/>
         <Experience/>
+        <Education/>
+        <CoursesAndCertifications/>
         <ContactMe/>
         <CVSection/>
         

@@ -1,5 +1,5 @@
 import { FaReact, FaNodeJs, FaCss3Alt, FaHtml5, FaJs, FaGitAlt } from 'react-icons/fa';
-import { SiTailwindcss, SiExpress, SiMongodb, SiFirebase, SiWordpress } from 'react-icons/si';
+import { SiTailwindcss, SiExpress, SiMongodb, SiFirebase, SiWordpress, SiFigma, SiAdobephotoshop, SiAdobeillustrator } from 'react-icons/si';
 
 const Technologies = () => {
   return (
@@ -72,8 +72,23 @@ const Technologies = () => {
           </div>
           {/* wordpress */}
           <div className="rounded-2xl border-4 border-neutral-500 p-2 flex flex-col items-center transform transition duration-300 hover:scale-110 hover:shadow-xl">
-            <SiWordpress className="text-yellow-500 text-7xl drop-shadow-xl hover:drop-shadow-2xl" />
+            <SiWordpress className="text-blue-500 text-7xl drop-shadow-xl hover:drop-shadow-2xl" />
             <span className="text-xl font-medium text-white mt-4">Wordpress</span>
+          </div>
+           {/* Figma */}
+           <div className="rounded-2xl border-4 border-neutral-500 p-2 flex flex-col items-center transform transition duration-300 hover:scale-110 hover:shadow-xl">
+            <SiFigma className="text-light-blue-500 text-7xl drop-shadow-xl hover:drop-shadow-2xl" />
+            <span className="text-xl font-medium text-white mt-4">Figma</span>
+          </div>
+          {/* Photoshop */}
+          <div className="rounded-2xl border-4 border-neutral-500 p-2 flex flex-col items-center transform transition duration-300 hover:scale-110 hover:shadow-xl">
+            <SiAdobephotoshop className="text-blue-500 text-7xl drop-shadow-xl hover:drop-shadow-2xl" />
+            <span className="text-xl font-medium text-white mt-4">Photoshop</span>
+          </div>
+          {/* Illustrator */}
+          <div className="rounded-2xl border-4 border-neutral-500 p-2 flex flex-col items-center transform transition duration-300 hover:scale-110 hover:shadow-xl">
+            <SiAdobeillustrator className="text-red-500 text-7xl drop-shadow-xl hover:drop-shadow-2xl" />
+            <span className="text-xl font-medium text-white mt-4">Illustrator</span>
           </div>
         </div>
       </div>
