@@ -1,5 +1,5 @@
 import React from "react";
-import cvFile from "../assets/Ranshika_CV.pdf"; // Path to your CV PDF
+import cvFile from "../assets/Ranshika Mihiran CV Resume.pdf"; // Path to your CV PDF
 
 const CVSection = () => {
   return (

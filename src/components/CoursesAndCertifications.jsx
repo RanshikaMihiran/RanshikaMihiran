@@ -61,7 +61,7 @@ const CoursesAndCertifications = () => {
             <p className="text-lg text-gray-300">Cadet</p>
           </div>
         </div>
-      </div>
+      </div>   
     </section>
   );
 };
