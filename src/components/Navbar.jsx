@@ -1,5 +1,5 @@
 import logo from "../assets/Ranshika.png";
-import { FaLinkedin } from "react-icons/fa6";
+import { FaBehance, FaLinkedin } from "react-icons/fa6";
 import { FaGithub } from "react-icons/fa6";
 import { FaSquareTwitter } from "react-icons/fa6";
 import { FaInstagram } from "react-icons/fa6";
@@ -54,9 +54,17 @@ const Navbar = () => {
             href="https://www.instagram.com/abeykoon_rm/"
             target="_blank"
             rel="noopener noreferrer"
-            className="hover:text-pink-500 transition-colors"
+            className="hover:text-blue-500 transition-colors"
           >
             <FaInstagram />
+          </a>
+          <a
+            href="https://www.behance.net/ranshinikz"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-blue-500 transition-colors"
+          >
+            <FaBehance />
           </a>
         </div>
 
