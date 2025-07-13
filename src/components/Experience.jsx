@@ -16,6 +16,32 @@ const Experience = () => {
         </h2>
 
         <div className="space-y-12">
+          {/* Visionary Design Vanguard Internship */}
+          <div
+            className={`flex flex-col lg:flex-row gap-8 bg-gray-800 p-8 rounded-lg shadow-lg transition-all transform transition duration-300 hover:scale-110 hover:shadow-xl ${
+              activeSection === 1 ? "scale-105 shadow-2xl" : "hover:shadow-xl"
+            }`}
+            onClick={() => toggleActiveSection(1)}
+          >
+            <div className="flex items-start gap-4">
+              <FaBuilding className="text-blue-500 text-4xl" />
+              <div>
+                <h3 className="text-2xl font-semibold text-white">Visionary Design Vanguard (Pvt) Ltd</h3>
+                <p className="text-gray-400">January 2024 - April 2024</p>
+              </div>
+            </div>
+            <div className="flex-1">
+              <h4 className="text-xl font-semibold text-white mb-4">Junior Web Developer</h4>
+              <ul className="list-disc pl-5 space-y-3 text-gray-300">
+                <li>Developed and maintained websites using WordPress and Divi Theme Builder.</li>
+                <li>Focused on mobile responsiveness and regular content updates.</li>
+                <li>Gained hands-on experience in front-end development and layout optimization.</li>
+                <li>Collaborated with design teams to ensure consistent branding across all pages.</li>
+                <li>Improved SEO performance by optimizing site structure, meta tags, and page load speed.</li>
+              </ul>
+            </div>
+          </div>
+
           {/* Ministry of Plantation Internship */}
           <div
             className={`flex flex-col lg:flex-row gap-8 bg-gray-800 p-8 rounded-lg shadow-lg transition-all transform transition duration-300 hover:scale-110 hover:shadow-xl ${

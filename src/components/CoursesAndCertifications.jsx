@@ -51,6 +51,8 @@ const CoursesAndCertifications = () => {
             </div>
             <p className="text-lg text-gray-300">Alison</p>
           </div>
+          
+          
 
           {/* Course Card 6 */}
           <div className="bg-gray-800 p-8 rounded-lg shadow-lg transform transition duration-300 hover:scale-105 hover:shadow-2xl">

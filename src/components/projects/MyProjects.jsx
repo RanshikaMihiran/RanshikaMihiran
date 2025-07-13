@@ -4,6 +4,7 @@ import Umbrella from "../../assets/projects/Umbrella Design.jpg";
 import AGLOGO from "../../assets/projects/Final.png";
 import Weddingcard from "../../assets/projects/Madara&Nuranga.jpg";
 import RentCar from "../../assets/projects/RentCar.jpg";
+import Class from "../../assets/projects/Class.jpg";
 
 const MyProjects = () => {
   const [selectedImage, setSelectedImage] = useState(null);
@@ -53,6 +54,14 @@ const MyProjects = () => {
               <img src={RentCar} alt="Rent Car" className="w-full h-68 object-cover mb-4 rounded-lg" />
               <h4 className="text-xl font-semibold mb-2">Rent Car</h4>
             </div>
+            <div
+              className="bg-gray-800 p-6 rounded-lg shadow-lg hover:shadow-2xl transition-all duration-300 cursor-pointer"
+              onClick={() => openPopup(Class)}
+            >
+              <img src={Class} alt="Rent Car" className="w-full h-68 object-cover mb-4 rounded-lg" />
+              <h4 className="text-xl font-semibold mb-2">Class Poster</h4>
+            </div>
+
           </div>
         </section>
       </div>
