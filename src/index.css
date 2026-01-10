@@ -1,111 +1,66 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-:root{
-  font-family: "Inter", sans-serif;
+:root {
+  --zinc-950: #09090b;
+  --zinc-900: #18181b;
+  --zinc-800: #27272a;
+  --zinc-700: #3f3f46;
+  --blue-500: #3b82f6;
 }
 
-/* Project section css */
-
-/* General Styles */
-body {
-  background-color: #121212; /* Dark background */
-  color: #e0e0e0; /* Light text for readability */
-  font-family: 'Arial', sans-serif;
+/* 1. Global Reset & Scroll Fix */
+html, body {
+  height: auto;
+  min-height: 100%;
   margin: 0;
   padding: 0;
+  background-color: var(--zinc-950);
+  color: #fafafa;
+  font-family: 'Inter', sans-serif;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
 }
 
-/* Projects Section */
-.projects {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 40px 20px;
-  text-align: center;
+/* 2. Background Spotlight */
+body::after {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  height: 600px;
+  background: radial-gradient(circle at 50% 0%, rgba(59, 130, 246, 0.08) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
 }
 
-.projects-title {
-  font-size: 2.5rem;
-  font-weight: bold;
-  color: #ffffff; /* White title color */
-  margin-bottom: 30px;
+/* 3. Utility Classes */
+@layer components {
+  .glass-card {
+    @apply bg-zinc-900/40 backdrop-blur-md border border-white/10;
+  }
 }
 
-/* Projects Container */
-.projects-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 20px;
+/* 4. Professional Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
 }
 
-/* Project Card */
-.project-card {
-  background-color: #1e1e1e; /* Slightly lighter black for cards */
-  border-radius: 12px;
-  padding: 20px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  transition: transform 0.3s, box-shadow 0.3s;
+::-webkit-scrollbar-track {
+  background: var(--zinc-950);
 }
 
-.project-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+::-webkit-scrollbar-thumb {
+  background: var(--zinc-800);
+  border-radius: 10px;
 }
 
-/* Project Image */
-.project-image {
-  width: 100%; /* Ensures the image stretches to the container width */
-  max-width: 100%; /* Prevents the image from exceeding the container width */
-  height: auto; /* Maintains the aspect ratio */
-  border-radius: 8px; /* Adds rounded corners */
-  margin-bottom: 15px; /* Adds spacing below the image */
-  display: block; /* Prevents inline space issues */
-  object-fit: cover; /* Ensures proper scaling of the image */
+::-webkit-scrollbar-thumb:hover {
+  background: var(--zinc-700);
 }
-
-
-/* Project Title */
-.project-title {
-  font-size: 1.8rem;
-  font-weight: bold;
-  color: #ffffff; /* White for title */
-  margin-bottom: 10px;
-}
-
-/* Project Description */
-.project-description {
-  font-size: 1rem;
-  color: #b0b0b0; /* Light gray for descriptions */
-  margin-bottom: 15px;
-}
-
-/* Project Technologies */
-.project-technologies {
-  font-size: 0.9rem;
-  color: #4fc3f7; /* Light blue for technologies */
-  margin-bottom: 15px;
-}
-
-/* Project Link */
-.project-link {
-  display: inline-block;
-  padding: 10px 20px;
-  font-size: 1rem;
-  color: #ffffff; /* White text for button */
-  background-color: #4fc3f7; /* Light blue background */
-  border: none;
-  border-radius: 5px;
-  text-decoration: none;
-  transition: background-color 0.3s;
-}
-
-.project-link:hover {
-  background-color: #0288d1; /* Darker blue on hover */
-}
-
-
-
-/* Project section css End */

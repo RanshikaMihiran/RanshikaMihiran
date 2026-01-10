@@ -1,54 +1,80 @@
 import React from "react";
+import { motion } from "framer-motion";
+
+const EDUCATION_DATA = [
+  {
+    title: "BSc (Hons) in Information Technology",
+    institution: "Sri Lanka Institute of Information Technology (SLIIT)",
+    duration: "2021 - Present",
+    description: "Specializing in Information Technology, focusing on software engineering, cloud computing, and system design.",
+  },
+  {
+    title: "G.C.E. Advanced Level",
+    institution: "Mayurapada Central College",
+    duration: "2019",
+    description: "Completed secondary education with a focus on physical science stream.",
+  },
+  {
+    title: "G.C.E. Ordinary Level",
+    institution: "Mayurapada Central College",
+    duration: "2016",
+    description: "Successfully completed with distinctions in key subjects.",
+  },
+];
 
 const Education = () => {
   return (
-    <section id="education" className=" text-white py-20">
-      <div className="max-w-6xl mx-auto px-4">
-        <h2 className="text-4xl font-bold text-center text-gradient mb-16">My Education Journey</h2>
+    <section id="education" className="bg-[#09090b] py-24">
+      <div className="max-w-4xl mx-auto px-6">
+        
+        {/* Header */}
+        <div className="mb-16">
+          <h2 className="text-4xl md:text-5xl font-medium text-white mb-4">
+            Academic <span className="text-zinc-500 italic font-light">Background</span>
+          </h2>
+          <div className="h-[1px] w-12 bg-blue-500"></div>
+        </div>
 
-        <div className="relative">
-          {/* Vertical Timeline Line */}
-          <div className="absolute inset-0 left-1/2 border-l-4 border-gray-600 z-0"></div>
+        {/* Timeline Container */}
+        <div className="relative border-l border-zinc-800 ml-3">
+          {EDUCATION_DATA.map((item, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              className="mb-12 ml-8 relative"
+            >
+              {/* Timeline Dot */}
+              <div className="absolute -left-[41px] top-1.5">
+                <div className="h-4 w-4 rounded-full bg-zinc-900 border border-zinc-700 flex items-center justify-center">
+                  <div className="h-1.5 w-1.5 rounded-full bg-blue-500 animate-pulse"></div>
+                </div>
+              </div>
 
-          {/* Education Items */}
-          <div className="space-y-12">
-            {/* Education Item 1 */}
-            <div className="flex flex-col items-center relative z-10">
-              <div className="absolute left-1/2 -translate-x-1/2 w-6 h-6 bg-gradient-to-r from-blue-500 to-blue-700 text-white rounded-full flex items-center justify-center shadow-xl transform transition duration-500 hover:scale-110">
-                <span className="text-lg font-semibold">1</span>
+              {/* Content */}
+              <div className="flex flex-col gap-1">
+                <span className="text-xs font-mono uppercase tracking-[0.2em] text-blue-500 mb-2">
+                  {item.duration}
+                </span>
+                
+                <h3 className="text-2xl font-medium text-zinc-100 tracking-tight">
+                  {item.title}
+                </h3>
+                
+                <p className="text-lg text-zinc-400 font-light">
+                  {item.institution}
+                </p>
+                
+                {item.description && (
+                  <p className="mt-3 text-sm text-zinc-500 leading-relaxed max-w-2xl">
+                    {item.description}
+                  </p>
+                )}
               </div>
-              <div className="bg-gray-800 p-8 rounded-lg shadow-2xl transform transition duration-500 hover:scale-105 mt-16 md:mt-0">
-                <h3 className="text-2xl font-semibold text-blue-400 mb-2">BSC (HONS) in Information Technology</h3>
-                <p className="text-lg text-gray-300 mb-4">Specializing in Information Technology</p>
-                <p className="text-md text-gray-400">Sri Lanka Institute of Information Technology (SLIIT)</p>
-                <p className="text-md text-gray-400">2021 - Present</p>
-              </div>
-            </div>
-
-            {/* Education Item 2 */}
-            <div className="flex flex-col items-center relative z-10">
-              <div className="absolute left-1/2 -translate-x-1/2 w-6 h-6 bg-gradient-to-r from-blue-500 to-blue-700 text-white rounded-full flex items-center justify-center shadow-xl transform transition duration-500 hover:scale-110">
-                <span className="text-lg font-semibold">2</span>
-              </div>
-              <div className="bg-gray-800 p-8 rounded-lg shadow-2xl transform transition duration-500 hover:scale-105 mt-16 md:mt-0">
-                <h3 className="text-2xl font-semibold text-blue-400 mb-2">G.C.E. Advanced Level</h3>
-                <p className="text-lg text-gray-300 mb-4">Mayurapada Central College</p>
-                <p className="text-md text-gray-400">2019</p>
-              </div>
-            </div>
-
-            {/* Education Item 3 */}
-            <div className="flex flex-col items-center relative z-10">
-              <div className="absolute left-1/2 -translate-x-1/2 w-6 h-6 bg-gradient-to-r from-blue-500 to-blue-700 text-white rounded-full flex items-center justify-center shadow-xl transform transition duration-500 hover:scale-110">
-                <span className="text-lg font-semibold">3</span>
-              </div>
-              <div className="bg-gray-800 p-8 rounded-lg shadow-2xl transform transition duration-500 hover:scale-105 mt-16 md:mt-0">
-                <h3 className="text-2xl font-semibold text-blue-400 mb-2">G.C.E. Ordinary Level</h3>
-                <p className="text-lg text-gray-300 mb-4">Mayurapada Central College</p>
-                <p className="text-md text-gray-400">2016</p>
-              </div>
-            </div>
-          </div>
+            </motion.div>
+          ))}
         </div>
       </div>
     </section>

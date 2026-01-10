@@ -1,86 +1,110 @@
 import React from "react";
-import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
-import { HiOutlineMail } from "react-icons/hi";
+import { motion } from "framer-motion";
+import { FiPhone, FiMail, FiMapPin, FiSend } from "react-icons/fi";
 
 const ContactMe = () => {
   return (
-    <section className="py-20 px-8 -900 text-white">
-      <div className="max-w-6xl mx-auto">
-        <h2 className="text-4xl font-bold tracking-tight text-center mb-16">
-          Contact Me
-        </h2>
+    <section id="contact" className="bg-[#09090b] py-24 relative overflow-hidden">
+      {/* Background Accent Glow */}
+      <div className="absolute bottom-0 right-0 w-[300px] h-[300px] bg-blue-600/10 rounded-full blur-[100px] pointer-events-none" />
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-          {/* Contact Details */}
-          <div className="flex flex-col space-y-6">
-            <div className="flex items-center gap-4">
-              <FaPhoneAlt className="text-green-500 text-2xl" />
-              <div>
-                <h4 className="font-semibold text-xl">Phone</h4>
-                <p className="text-gray-400">+94 76 179 4129</p>
-              </div>
+      <div className="max-w-7xl mx-auto px-6 relative z-10">
+        
+        {/* Header */}
+        <div className="mb-16">
+          <h2 className="text-4xl md:text-5xl font-medium text-white mb-4 italic">
+            Get in <span className="text-zinc-500 font-light not-italic">Touch</span>
+          </h2>
+          <div className="h-[1px] w-12 bg-blue-600"></div>
+        </div>
+
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
+          
+          {/* Contact Details (Span 5) */}
+          <div className="lg:col-span-5 space-y-12">
+            <div>
+              <p className="text-zinc-400 text-lg leading-relaxed font-light mb-8">
+                I'm currently looking for new opportunities and collaborations. 
+                Whether you have a question or just want to say hi, I’ll get back to you.
+              </p>
             </div>
-            <div className="flex items-center gap-4">
-              <FaEnvelope className="text-blue-500 text-2xl" />
-              <div>
-                <h4 className="font-semibold text-xl">Email</h4>
-                <p className="text-gray-400">ranshika20@gmail.com</p>
+
+            <div className="space-y-8">
+              <div className="flex items-center gap-6 group">
+                <div className="p-4 bg-zinc-900 border border-zinc-800 rounded-full text-zinc-400 group-hover:text-blue-500 group-hover:border-blue-500/50 transition-all">
+                  <FiPhone size={20} />
+                </div>
+                <div>
+                  <h4 className="text-xs font-mono uppercase tracking-widest text-zinc-600">Call me</h4>
+                  <p className="text-white font-medium">+94 76 179 4129</p>
+                </div>
               </div>
-            </div>
-            <div className="flex items-center gap-4">
-              <FaMapMarkerAlt className="text-red-500 text-2xl" />
-              <div>
-                <h4 className="font-semibold text-xl">Location</h4>
-                <p className="text-gray-400">471/1,Alawwa,Sri Lanka</p>
+
+              <div className="flex items-center gap-6 group">
+                <div className="p-4 bg-zinc-900 border border-zinc-800 rounded-full text-zinc-400 group-hover:text-blue-500 group-hover:border-blue-500/50 transition-all">
+                  <FiMail size={20} />
+                </div>
+                <div>
+                  <h4 className="text-xs font-mono uppercase tracking-widest text-zinc-600">Email</h4>
+                  <p className="text-white font-medium">ranshika20@gmail.com</p>
+                </div>
+              </div>
+
+              <div className="flex items-center gap-6 group">
+                <div className="p-4 bg-zinc-900 border border-zinc-800 rounded-full text-zinc-400 group-hover:text-blue-500 group-hover:border-blue-500/50 transition-all">
+                  <FiMapPin size={20} />
+                </div>
+                <div>
+                  <h4 className="text-xs font-mono uppercase tracking-widest text-zinc-600">Location</h4>
+                  <p className="text-white font-medium">Alawwa, Sri Lanka</p>
+                </div>
               </div>
             </div>
           </div>
 
-          {/* Contact Form */}
-          <form className="space-y-6 bg-gray-800 p-8 rounded-lg shadow-lg">
-            <div>
-              <label htmlFor="name" className="block font-semibold mb-2">
-                Name
-              </label>
-              <input
-                type="text"
-                id="name"
-                className="w-full p-3 rounded-md bg-gray-700 text-gray-300 border border-gray-600 focus:outline-none focus:ring-2 focus:ring-green-500"
-                placeholder="Your Name"
-              />
-            </div>
+          {/* Contact Form (Span 7) */}
+          <motion.div 
+            initial={{ opacity: 0, x: 20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            className="lg:col-span-7 bg-zinc-900/50 border border-zinc-800 p-8 md:p-12 rounded-sm backdrop-blur-sm"
+          >
+            <form className="space-y-8">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div className="space-y-2">
+                  <label className="text-[10px] uppercase tracking-widest text-zinc-500 font-semibold">Name</label>
+                  <input
+                    type="text"
+                    className="w-full bg-transparent border-b border-zinc-800 py-3 text-white focus:outline-none focus:border-blue-500 transition-colors placeholder:text-zinc-700"
+                    placeholder="Your full name"
+                  />
+                </div>
+                <div className="space-y-2">
+                  <label className="text-[10px] uppercase tracking-widest text-zinc-500 font-semibold">Email</label>
+                  <input
+                    type="email"
+                    className="w-full bg-transparent border-b border-zinc-800 py-3 text-white focus:outline-none focus:border-blue-500 transition-colors placeholder:text-zinc-700"
+                    placeholder="example@email.com"
+                  />
+                </div>
+              </div>
 
-            <div>
-              <label htmlFor="email" className="block font-semibold mb-2">
-                Email
-              </label>
-              <input
-                type="email"
-                id="email"
-                className="w-full p-3 rounded-md bg-gray-700 text-gray-300 border border-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                placeholder="Your Email"
-              />
-            </div>
+              <div className="space-y-2">
+                <label className="text-[10px] uppercase tracking-widest text-zinc-500 font-semibold">Message</label>
+                <textarea
+                  rows="4"
+                  className="w-full bg-transparent border-b border-zinc-800 py-3 text-white focus:outline-none focus:border-blue-500 transition-colors placeholder:text-zinc-700 resize-none"
+                  placeholder="How can I help you?"
+                ></textarea>
+              </div>
 
-            <div>
-              <label htmlFor="message" className="block font-semibold mb-2">
-                Message
-              </label>
-              <textarea
-                id="message"
-                rows="5"
-                className="w-full p-3 rounded-md bg-gray-700 text-gray-300 border border-gray-600 focus:outline-none focus:ring-2 focus:ring-purple-500"
-                placeholder="Your Message"
-              ></textarea>
-            </div>
-
-            <button
-              type="submit"
-              className="w-full py-3 px-6 rounded-md bg-green-600 text-white font-bold hover:bg-green-500 focus:outline-none focus:ring-4 focus:ring-green-300 transition duration-300"
-            >
-              Send Message
-            </button>
-          </form>
+              <button
+                type="submit"
+                className="inline-flex items-center gap-3 px-10 py-4 bg-white text-black font-bold text-sm uppercase tracking-widest hover:bg-blue-600 hover:text-white transition-all duration-300"
+              >
+                Send Message <FiSend />
+              </button>
+            </form>
+          </motion.div>
         </div>
       </div>
     </section>

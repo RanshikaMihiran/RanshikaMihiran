@@ -1,89 +1,87 @@
 import React, { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { FiPlus, FiX } from "react-icons/fi";
+
+// Import Assets
 import salonImage from "../../assets/projects/SalonOpeening.jpg";
 import Umbrella from "../../assets/projects/Umbrella Design.jpg";
-import AGLOGO from "../../assets/projects/Final.png";
 import Weddingcard from "../../assets/projects/Madara&Nuranga.jpg";
 import RentCar from "../../assets/projects/RentCar.jpg";
 import Class from "../../assets/projects/Class.jpg";
 
+const GRAPHIC_PROJECTS = [
+  { id: 1, src: salonImage, title: "Salon Opening", cat: "Print Design" },
+  { id: 2, src: Umbrella, title: "Umbrella Branding", cat: "Identity" },
+  { id: 3, src: Weddingcard, title: "Wedding Suite", cat: "Typography" },
+  { id: 4, src: RentCar, title: "Rental Campaign", cat: "Marketing" },
+  { id: 5, src: Class, title: "Education Poster", cat: "Social Media" },
+];
+
 const MyProjects = () => {
   const [selectedImage, setSelectedImage] = useState(null);
 
-  const openPopup = (image) => {
-    setSelectedImage(image);
-  };
-
-  const closePopup = () => {
-    setSelectedImage(null);
-  };
-
   return (
-    <div className="bg-black text-white py-16">
-      <div className="max-w-6xl mx-auto px-4">
-        {/* Graphic Design Projects Section */}
-        <section id="graphic-design" className="mb-12">
-          <h3 className="text-3xl font-bold text-blue-500 mb-6">Graphic Design Projects</h3>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            {/* Example of a graphic design project */}
-            <div
-              className="bg-gray-800 p-6 rounded-lg shadow-lg hover:shadow-2xl transition-all duration-300 cursor-pointer"
-              onClick={() => openPopup(salonImage)}
-            >
-              <img src={salonImage} alt="Invitation Card" className="w-full h-68 object-cover mb-4 rounded-lg" />
-              <h4 className="text-xl font-semibold mb-2">Invitation Card</h4>
-            </div>
-            {/* More graphic design projects */}
-            <div
-              className="bg-gray-800 p-6 rounded-lg shadow-lg hover:shadow-2xl transition-all duration-300 cursor-pointer"
-              onClick={() => openPopup(Umbrella)}
-            >
-              <img src={Umbrella} alt="Umbrella Design" className="w-full h-68 object-cover mb-4 rounded-lg" />
-              <h4 className="text-xl font-semibold mb-2">Umbrella Design</h4>
-            </div>
-            <div
-              className="bg-gray-800 p-6 rounded-lg shadow-lg hover:shadow-2xl transition-all duration-300 cursor-pointer"
-              onClick={() => openPopup(Weddingcard)}
-            >
-              <img src={Weddingcard} alt="Wedding Invitation" className="w-full h-68 object-cover mb-4 rounded-lg" />
-              <h4 className="text-xl font-semibold mb-2">Wedding Invitation</h4>
-            </div>
-            <div
-              className="bg-gray-800 p-6 rounded-lg shadow-lg hover:shadow-2xl transition-all duration-300 cursor-pointer"
-              onClick={() => openPopup(RentCar)}
-            >
-              <img src={RentCar} alt="Rent Car" className="w-full h-68 object-cover mb-4 rounded-lg" />
-              <h4 className="text-xl font-semibold mb-2">Rent Car</h4>
-            </div>
-            <div
-              className="bg-gray-800 p-6 rounded-lg shadow-lg hover:shadow-2xl transition-all duration-300 cursor-pointer"
-              onClick={() => openPopup(Class)}
-            >
-              <img src={Class} alt="Rent Car" className="w-full h-68 object-cover mb-4 rounded-lg" />
-              <h4 className="text-xl font-semibold mb-2">Class Poster</h4>
-            </div>
+    <section id="design" className="bg-[#09090b] py-24 border-t border-zinc-900">
+      <div className="max-w-7xl mx-auto px-6">
+        
+        {/* Header */}
+        <div className="mb-16">
+          <h4 className="text-[10px] font-mono uppercase tracking-[0.4em] text-blue-500 mb-4">Creative Gallery</h4>
+          <h2 className="text-4xl md:text-6xl font-medium text-white tracking-tighter italic leading-none">
+            Visual <span className="text-zinc-500 not-italic">Stories.</span>
+          </h2>
+        </div>
 
-          </div>
-        </section>
+        {/* Masonry Grid */}
+        <div className="columns-1 sm:columns-2 lg:columns-3 gap-8 space-y-8">
+          {GRAPHIC_PROJECTS.map((project) => (
+            <div
+              key={project.id}
+              onClick={() => setSelectedImage(project.src)}
+              className="relative group overflow-hidden bg-zinc-900 border border-zinc-800 cursor-pointer rounded-sm"
+            >
+              {/* Image - Always in color */}
+              <img 
+                src={project.src} 
+                alt={project.title} 
+                className="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105" 
+              />
+              
+              {/* Hover Overlay */}
+              <div className="absolute inset-0 bg-zinc-950/60 opacity-0 group-hover:opacity-100 transition-all duration-300 flex flex-col justify-end p-8">
+                <FiPlus className="text-white text-3xl mb-4" />
+                <p className="text-blue-500 text-[10px] uppercase tracking-widest font-mono">{project.cat}</p>
+                <h4 className="text-xl font-medium text-white">{project.title}</h4>
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
 
-      {/* Popup Modal */}
-      {selectedImage && (
-        <div
-          className="fixed inset-0 bg-black bg-opacity-80 flex justify-center items-center z-50"
-          onClick={closePopup}
-        >
-          <div className="relative">
-            <button
-              className="absolute top-0 right-0 text-white text-2xl p-2"
-              onClick={closePopup}
-            >
-              &times;
+      {/* Full Screen Modal */}
+      <AnimatePresence>
+        {selectedImage && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 bg-black/98 backdrop-blur-xl flex justify-center items-center z-[100] p-4 lg:p-20"
+            onClick={() => setSelectedImage(null)}
+          >
+            <button className="absolute top-10 right-10 text-white p-2">
+              <FiX size={32} />
             </button>
-            <img src={selectedImage} alt="Selected Project" className="max-w-full max-h-screen rounded-lg" />
-          </div>
-        </div>
-      )}
-    </div>
+
+            <motion.img 
+              initial={{ scale: 0.9 }}
+              animate={{ scale: 1 }}
+              src={selectedImage} 
+              className="max-w-full max-h-full object-contain border border-zinc-800" 
+            />
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </section>
   );
 };
 
