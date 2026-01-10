@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { FiDownloadCloud, FiFileText, FiCheckCircle } from "react-icons/fi";
-import cvFile from "../assets/Ranshika Mihiran CV Resume.pdf";
+import cvFile from "../assets/Ranshika Mihiran CV.pdf";
 
 const CVSection = () => {
   return (
