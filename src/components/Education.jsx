@@ -5,7 +5,7 @@ const EDUCATION_DATA = [
   {
     title: "BSc (Hons) in Information Technology",
     institution: "Sri Lanka Institute of Information Technology (SLIIT)",
-    duration: "2021 - Present",
+    duration: "2021 - 2025",
     description: "Specializing in Information Technology, focusing on software engineering, cloud computing, and system design.",
   },
   {
