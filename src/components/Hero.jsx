@@ -97,7 +97,7 @@ const Hero = () => {
             {/* Credential Badge */}
             <div className="absolute -bottom-6 -right-6 bg-zinc-900 border border-zinc-800 p-6 shadow-2xl rounded-sm">
               <p className="text-white font-medium text-lg tracking-tighter leading-none">SLIIT</p>
-              <p className="text-zinc-600 text-[10px] uppercase tracking-[0.3em] mt-2 font-mono">Undergraduate</p>
+              <p className="text-zinc-600 text-[10px] uppercase tracking-[0.3em] mt-2 font-mono">Graduated</p>
             </div>
           </motion.div>
         </div>
